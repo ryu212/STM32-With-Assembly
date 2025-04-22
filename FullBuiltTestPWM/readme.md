@@ -1,0 +1,2 @@
+- Use command the command `make` to compile all files and create .hex debug file
+- Use command `make clean` to delete all files with extension name ".o", ".elf", ".hex" 
