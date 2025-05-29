@@ -146,12 +146,12 @@ loop:
     mov r2, #(1 << 15)
     and r3, r1, r2
     cmp r3, #(1 << 15)
-    beq turn_right
+    beq turn_left
 
     mov r2, #(1 << 14)
     and r3, r1, r2
     cmp r3, #(1 << 14)
-    beq turn_left
+    beq turn_right
 
     mov r2, #(1 << 13)
     and r3, r1, r2
@@ -164,7 +164,7 @@ loop:
     beq backward
     b no_ctrl_signal
 
-    turn_right:
+    turn_left:
     ldr r1, =TIM2_CCR1 
     ldr r2, =TIM2_CCR2
     ldr r3, =TIM2_CCR3
@@ -178,7 +178,7 @@ loop:
     str r0, [r3]
     b end_control
 
-    turn_left:
+    turn_right:
     ldr r1, =TIM2_CCR1 
     ldr r2, =TIM2_CCR2
     ldr r3, =TIM2_CCR3
